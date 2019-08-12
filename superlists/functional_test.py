@@ -1,7 +1,7 @@
 from selenium import webdriver
-from seleniu.webdriver.common.keys import Keys
+from selenium.webdriver.common.keys import Keys
 import time
-import unittests
+import unittest
 
 class NewVisitorTest(unittest.TestCase):
 
@@ -42,7 +42,7 @@ class NewVisitorTest(unittest.TestCase):
         rows = table.find_elements_by_tag_name('tr')
         self.assertTrue(
             any(row.text == '1: Buy peacock feathers' for row in rows),
-            f"New to-do item did not appear in table. Contents were :\n{table.text}" 
+            f"New to-do item did not appear in table. Contents were :\n{table.text}"
         )
 
         # input "Use peacock faethers to make a fly"
@@ -64,8 +64,8 @@ class NewVisitorTest(unittest.TestCase):
 
         #[...rest of comments as before]
 
-if __name__ = '__main__':
-    unittests.main(warnings='ignore')
+if __name__ == '__main__':
+    unittest.main(warnings='ignore')
     
 
 #browser = webdriver.Firefox()
